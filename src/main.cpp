@@ -149,8 +149,8 @@ void logTouchData(int posX, int posY, int pressure)
 void displayTouchData(int posX, int posY, int pressure)
 {
   // Clear TFT screen
-  tft.fillScreen(TFT_WHITE);
-  tft.setTextColor(TFT_BLACK, TFT_WHITE);
+  tft.fillScreen(TFT_BLACK);
+  tft.setTextColor(TFT_WHITE, TFT_BLACK);
 
   // Draw text
   int textY = 100;
@@ -171,7 +171,7 @@ void displayTouchData(int posX, int posY, int pressure)
   tft.drawRect(50, 180, 10, 10, TFT_BLUE);
   tft.drawRect(260, 180, 10, 10, TFT_BLUE);
 
-  tft.fillSmoothCircle(posX, posY, pressure/200, TFT_YELLOW);
+  tft.fillSmoothCircle(posX, posY, pressure/200, TFT_RED);
 }
 
 void setup()
@@ -193,8 +193,8 @@ void setup()
   tft.setRotation(1);
 
   // Clear the screen and display a message
-  tft.fillScreen(TFT_WHITE);
-  tft.setTextColor(TFT_BLACK, TFT_WHITE);
+  tft.fillScreen(TFT_BLACK);
+  tft.setTextColor(TFT_WHITE, TFT_BLACK);
 
   // Set X and Y coordinates for center of display
   centerX = SCREEN_WIDTH / 2;
@@ -207,7 +207,7 @@ void setup()
   int y = (tft.height() - 110) / 2;
 
   // Draw the Kafkar logo bitmap
-  tft.drawBitmap(x, y, bitmap_kafkar_logo, 116, 100, TFT_BLACK);
+  tft.drawBitmap(x, y, bitmap_kafkar_logo, 116, 100, TFT_WHITE);
 }
 
 void loop()
